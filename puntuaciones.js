@@ -8,16 +8,23 @@ function crearEstudiante() {
     }
 }
 
-function obtenerPuntajes() {
-    var puntajes = getElementsByClassName('')
+function removerEstudiante() {
+    let estudianteRemover = document.getElementsByClassName('cajaEstudiante')[numeroDeEstudiantes]
+    if (!estudianteRemover) {
+        alert('Aún no ha agregado a ningun estudiante')
+    } else {
+        padre = estudianteRemover.parentNode;
+        padre.removeChild(estudianteRemover);
+    }
+    numeroDeEstudiantes -= 1
 }
 
-class estudianteArray {
-    constructor(nombre, puntaje) {
-        this.nombre = nombre
-        this.puntaje = puntaje
-    }
+
+function obtenerPuntajes() {
+    console.log(listaDeEstudiantes)
+
 }
+
 
 class nuevoEstudiante {
     constructor(nombre) {
@@ -69,8 +76,10 @@ class nuevoEstudiante {
         restarPuntos.setAttribute('id', restarPuntosId)
         restarPuntos.addEventListener('click', restarPuntosF)
         function restarPuntosF() {
-            puntaje = puntaje - 10
-            puntajeEstudiante.innerHTML = puntaje
+            if (puntaje >= 10) {
+                puntaje = puntaje - 10
+                puntajeEstudiante.innerHTML = puntaje
+            }
         }
 
         zone_users.appendChild(cajaEstudiante)
@@ -86,18 +95,21 @@ class nuevoEstudiante {
 
 const inputUser = document.getElementById('inputUser')
 const addUserButton = document.getElementById('addUserButton')
+const removeUserButton = document.getElementById('removeUserButton')
 const endClassButton = document.getElementById('endClassButton')
 const zone_users = document.getElementById('zoneUsers')
 const addPointsButtons = document.getElementsByClassName('sumarPuntos')
 
 
 
-let numeroDeEstudiantes = 0
+let numeroDeEstudiantes = -1
 var listaDeEstudiantes = []
 
 
 addUserButton.addEventListener('click', crearEstudiante)
 endClassButton.addEventListener('click', obtenerPuntajes)
+removeUserButton.addEventListener('click', removerEstudiante)
+
 
 
 
