@@ -1,9 +1,30 @@
+// Funcion para organizar items
+
+// var items = [
+//     { name: 'Edward', value: 21 },
+//     { name: 'Sharpe', value: 37 },
+//     { name: 'And', value: 45 },
+//     { name: 'The', value: -12 },
+//     { name: 'Magnetic', value: 13 },
+//     { name: 'Zeros', value: 37 }
+//   ];
+//   items.sort(function (a, b) {
+//     if (a.name > b.name) {
+//       return 1;
+//     }
+//     if (a.name < b.name) {
+//       return -1;
+//     }
+//     // a must be equal to b
+//     return 0;
+//   });
+
+
 function crearEstudiante() {
     let nombreEstudiante = inputUser.value
     if (nombreEstudiante) {
         var estudiante_ = new nuevoEstudiante(nombreEstudiante)
         estudiante_.crearEstudianteEnHTML()
-        listaDeEstudiantes.push(estudiante_)
         inputUser.value = '' // Hacer que la caja de texto se vacie automaticamente
     }
 }
@@ -21,7 +42,28 @@ function removerEstudiante() {
 
 
 function obtenerPuntajes() {
-    console.log(listaDeEstudiantes)
+    listaDeEstudiantes = []
+    for (let i = 0; i <= numeroDeEstudiantes; i++) {
+        let estudianteNombreHTML = document.getElementsByClassName('nombreEstudiante')[i]
+        let estudiantePuntajeHTML = document.getElementsByClassName('puntajeEstudiante')[i]
+        let estudianteNombre = estudianteNombreHTML.innerHTML
+        let estudiantePuntaje = estudiantePuntajeHTML.innerHTML
+        let objetoEstudiante = { name: estudianteNombre, score: estudiantePuntaje }
+        listaDeEstudiantes.push(objetoEstudiante)
+    }
+    organizarPuntajes()
+}
+
+function organizarPuntajes() {
+    listaDeEstudiantes.sort(function (a, b) {
+        if (a.score > b.score) {
+            return 1;
+        }
+        if (a.score < b.score) {
+            return -1;
+        }
+        return 0;
+    })
 
 }
 
@@ -52,8 +94,8 @@ class nuevoEstudiante {
         let puntajeEstudianteId = 'puntajeEstudiante_' + numeroDeEstudiantes
         let puntajeEstudiante = document.createElement('p')
         puntajeEstudiante.innerHTML = puntaje
-        puntajeEstudiante.setAttribute('class', 'puntajeEstudiante')
         puntajeEstudiante.setAttribute('class', nombreSinEspacios)
+        puntajeEstudiante.setAttribute('class', 'puntajeEstudiante')
         puntajeEstudiante.setAttribute('id', puntajeEstudianteId)
 
         let sumarPuntosId = 'sumarPuntos_' + numeroDeEstudiantes
