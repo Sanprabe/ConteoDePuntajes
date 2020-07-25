@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
+#addUserButton:hover, #removeUserButton:hover, #endClassButton {
+    cursor: pointer;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -131,7 +135,7 @@ main{
 }
 
 .conTablas{
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 table, th, td {

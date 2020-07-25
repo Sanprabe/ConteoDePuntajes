@@ -115,18 +115,21 @@ function removerEstudiante() {
 endClassButton.addEventListener('click', obtenerPuntajes)
 
 function obtenerPuntajes() {
-    endClassButton.removeEventListener('click', obtenerPuntajes) // Se utiliza para que solo se pueda oprimir una vez el boton de finalizar la clase
-    // Se crea un objeto por cada estudiante y se mete dentro de un array
-    for (let i = 0; i <= numeroDeEstudiantes; i++) {
-        let estudianteNombreHTML = document.getElementsByClassName('nombreEstudiante')[i]
-        let estudiantePuntajeHTML = document.getElementsByClassName('puntajeEstudiante')[i]
-        let estudianteNombre = estudianteNombreHTML.innerHTML
-        let estudiantePuntaje = estudiantePuntajeHTML.innerHTML
-        estudiantePuntaje = parseInt(estudiantePuntaje)
-        let objetoEstudiante = { name: estudianteNombre, score: estudiantePuntaje }
-        listaDeEstudiantes.push(objetoEstudiante)
+    var x = confirm('Seguro que deseas obtener los puestos?')
+    if (x) {
+        endClassButton.removeEventListener('click', obtenerPuntajes) // Se utiliza para que solo se pueda oprimir una vez el boton de finalizar la clase
+        // Se crea un objeto por cada estudiante y se mete dentro de un array
+        for (let i = 0; i <= numeroDeEstudiantes; i++) {
+            let estudianteNombreHTML = document.getElementsByClassName('nombreEstudiante')[i]
+            let estudiantePuntajeHTML = document.getElementsByClassName('puntajeEstudiante')[i]
+            let estudianteNombre = estudianteNombreHTML.innerHTML
+            let estudiantePuntaje = estudiantePuntajeHTML.innerHTML
+            estudiantePuntaje = parseInt(estudiantePuntaje)
+            let objetoEstudiante = { name: estudianteNombre, score: estudiantePuntaje }
+            listaDeEstudiantes.push(objetoEstudiante)
+        }
+        organizarPuntajes()
     }
-    organizarPuntajes()
 }
 
 function organizarPuntajes() {
