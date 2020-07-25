@@ -71,7 +71,7 @@ const endClassButton = document.getElementById('endClassButton')
 const zone_users = document.getElementById('zoneUsers')
 const addPointsButtons = document.getElementsByClassName('sumarPuntos')
 const zone_Groups = document.getElementById('zoneGroups')
-const body = document.getElementById('body')
+const main = document.getElementById('main')
 
 
 let numeroDeEstudiantes = -1 // Se inicia la cuenta de -1 para que coincida con el index de los arrays
@@ -153,10 +153,6 @@ function organizarPuntajes() {
     grupo1 = listaDeEstudiantesFinal.slice(0, estudiantesPorGrupoFinal)
     grupo2 = listaDeEstudiantesFinal.slice(estudiantesPorGrupoFinal, 2 * estudiantesPorGrupoFinal)
     grupo3 = listaDeEstudiantesFinal.slice(2 * estudiantesPorGrupoFinal, listaDeEstudiantesFinal.length)
-    console.log(grupo1)
-    console.log(grupo2)
-    console.log(grupo3)
-    console.log(grupo4)
     escribirGrupos()
 }
 
@@ -252,7 +248,9 @@ function escribirGrupos() {
 
     // Se inserta respectivamente el codigo que creamos en la anterior parte en el HTML
 
-    body.appendChild(zonaGrupos)
+
+    main.appendChild(zonaGrupos)
+    main.setAttribute('class', 'conTablas')
     zonaGrupos.appendChild(titulo_1)
     zonaGrupos.appendChild(cajaGrupo_1)
     cajaGrupo_1.appendChild(tablaGrupo_1)
