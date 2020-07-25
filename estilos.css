@@ -55,12 +55,12 @@ main{
 
 #inputUser{
     height: 40px;
-    width: 250px;
+    width: 320px;
     padding-left: 45px;
     margin-right: 10px;
-    margin-left: 93px;
+    margin-left: 20px;
     border: 2px solid #E2675E;
-    border-radius: 30px;
+    border-radius: 30px;    
     outline: transparent;
 }
 
