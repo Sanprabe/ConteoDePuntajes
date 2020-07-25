@@ -15,6 +15,10 @@ class nuevoEstudiante {
         cajaEstudiante.setAttribute('class', 'cajaEstudiante')
         cajaEstudiante.setAttribute('id', cajaDeEstudianteId) // ID es para llevar registro del numero de estudiantes con facilidad
 
+        //Se crea la caja para los textos
+        let cajaTexto = document.createElement('div')
+        cajaTexto.setAttribute('class', 'cajaTexto')
+
         // Se crea el texto del nombre
         let nombreEstudiante = document.createElement('p')
         nombreEstudiante.innerHTML = nombre
@@ -50,8 +54,9 @@ class nuevoEstudiante {
         // Se agrega la caja del estudiante a la zona de estudiantes
         zone_users.appendChild(cajaEstudiante)
         //Se agregan todos los otros objetos a la caja del estudiante
-        cajaEstudiante.appendChild(nombreEstudiante)
-        cajaEstudiante.appendChild(puntajeEstudiante)
+        cajaEstudiante.appendChild(cajaTexto)
+        cajaTexto.appendChild(nombreEstudiante)
+        cajaTexto.appendChild(puntajeEstudiante)
         cajaEstudiante.appendChild(sumarPuntos)
         cajaEstudiante.appendChild(restarPuntos)
 

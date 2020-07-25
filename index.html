@@ -4,20 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Puntajes</title>
 </head>
 
 <body id="body">
-    <div id="addUser">
-        <h2>AGREGAR USUARIO</h2>
-        <input type="text" id="inputUser">
-        <input type="button" value="Agregar Usuario" id="addUserButton">
-        <input type="button" value="Remover Usuario" id="removeUserButton">
-    </div>
-    <div id="zoneUsers"></div>
-    <div id="finalizarClase">
-        <input type="button" value="Obtener Puestos" id="endClassButton">
-    </div>
+    <main>
+        <div class="title">
+            <h1>PUNTOS +</h1>
+        </div>
+        <div id="addUser">
+            <input type="text" id="inputUser" placeholder="Escriba el nombre">
+            <input type="button" value="+" id="addUserButton">
+            <input type="button" value="-" id="removeUserButton">
+        </div>
+        <div id="zoneUsers"></div>
+        <div id="finalizarClase">
+            <input type="button" value="Obtener Puestos" id="endClassButton">
+        </div>
+    </main>
     <script src="puntuaciones.js">
     </script>
 </body>

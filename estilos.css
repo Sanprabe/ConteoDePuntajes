@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(#FEC389, #F89689);
+}
+main{
+    position: relative;
+    background-color: white;
+    width: 450px;
+}
+.title{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #FE4040;
+    background-image: linear-gradient(#E9A064, #E2675E);
+}
+
+.title h1{
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+
+#addUser{
+    margin: 20px auto 10px 20px ;
+}
+
+#inputUser{
+    height: 40px;
+    width: 250px;
+    padding-left: 30px;
+    margin-right: 10px;
+    margin-left: 15px;
+    border: 2px solid #E2675E;
+    border-radius: 30px;
+    outline: transparent;
+}
+
+#addUserButton, #removeUserButton{
+    outline: transparent;
+    color: #E2675E;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #E2675E;
+    border-radius: 10px;
+}
+
+#endClassButton{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    outline: transparent;
+    color: #E2675E;
+    background-color: transparent;
+    height: 40px;
+    border: 2px solid #E2675E;
+    border-radius: 10px;
+}
