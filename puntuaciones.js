@@ -186,21 +186,24 @@ function escribirGrupos() {
     }
 
     //Crear las tablas de grupos
-    let zonaGrupos = document.createElement('div')
+    let zonaGrupos = document.createElement('div') // Se crea el div principal donde estarán los 4 grupos
     zonaGrupos.setAttribute('id', 'zoneGroups')
 
+    // Se crea el codigo base del grupo 1
     let titulo_1 = document.createElement('h2')
-    titulo_1.innerHTML = 'Grupo #1'
+    titulo_1.innerHTML = 'Grupo #1' // Se agrega el texto del titulo
     let cajaGrupo_1 = document.createElement('div')
     cajaGrupo_1.setAttribute('id', 'cajaGrupo_1')
     let tablaGrupo_1 = document.createElement('table')
     tablaGrupo_1.setAttribute('id', 'tablaGrupo_1')
     let filaTitulos_1 = document.createElement('tr')
-    filaTitulos_1.setAttribute('id', 'filaTitulos_1')
+    filaTitulos_1.setAttribute('id', 'filaTitulos_1') // Se agregan los titulos a la tabla de datos
     let nombres_1 = document.createElement('th')
     nombres_1.innerHTML = 'Nombre'
     let puntajes_1 = document.createElement('th')
     puntajes_1.innerHTML = 'Puntaje'
+
+    // Se repite lo anterior con los demás grupos
 
     let titulo_2 = document.createElement('h2')
     titulo_2.innerHTML = 'Grupo #2'
@@ -241,6 +244,9 @@ function escribirGrupos() {
     let puntajes_4 = document.createElement('th')
     puntajes_4.innerHTML = 'Puntaje'
 
+
+    // Se inserta respectivamente el codigo que creamos en la anterior parte en el HTML
+
     body.appendChild(zonaGrupos)
     zonaGrupos.appendChild(titulo_1)
     zonaGrupos.appendChild(cajaGrupo_1)
@@ -270,12 +276,15 @@ function escribirGrupos() {
     filaTitulos_4.appendChild(nombres_4)
     filaTitulos_4.appendChild(puntajes_4)
 
+    // Se sacan las tablas donde se insertarán los arrays de los grupos
+
     const tabla_1 = document.getElementById('tablaGrupo_1')
     const tabla_2 = document.getElementById('tablaGrupo_2')
     const tabla_3 = document.getElementById('tablaGrupo_3')
     const tabla_4 = document.getElementById('tablaGrupo_4')
 
 
+    // Se hace un ciclo que agregue todos los nombres y puntajes de cada grupo
     for (estudiante of grupo1) {
         let n = estudiante.name
         let p = estudiante.score
