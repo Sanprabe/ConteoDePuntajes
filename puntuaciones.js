@@ -43,7 +43,7 @@ class nuevoEstudiante {
         let restarPuntos = document.createElement('input')
         restarPuntos.setAttribute('type', 'button')
         restarPuntos.setAttribute('value', '-10')
-        restarPuntos.setAttribute('class', 'PuntosRestar')
+        restarPuntos.setAttribute('class', 'restarPuntos')
         restarPuntos.addEventListener('click', function () {    // Funcion que resta el puntaje
             if (puntaje >= 10) {    // Condición para que no existan numeros negativos
                 puntaje = puntaje - 10
