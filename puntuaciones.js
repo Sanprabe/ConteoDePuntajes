@@ -347,5 +347,14 @@ function escribirGrupos() {
         fila.appendChild(nombre_)
         fila.appendChild(puntaje_)
     }
+
+    let cajaRecargarPagina = document.createElement('div')
+    cajaRecargarPagina.setAttribute('id', 'zoneRefreshPage')
+    let recargarPagina = document.createElement('a')
+    recargarPagina.setAttribute('href', 'javascript:window.location.href=window.location.href')
+    recargarPagina.setAttribute('id', 'refreshPage')
+    recargarPagina.innerHTML = 'Volver a la pagina principal'
+    main.appendChild(cajaRecargarPagina)
+    cajaRecargarPagina.appendChild(recargarPagina)
 }
 
